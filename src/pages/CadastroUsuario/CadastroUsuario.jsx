@@ -1,5 +1,6 @@
 import { useState } from 'react';
-
+import { collection, addDoc } from "firebase/firestore"; 
+import { db } from '../../database/firebaseConfig';
 const CadastroUsuario = () => {
 
   const [formulario, setFormulario] = useState(
@@ -18,9 +19,12 @@ const CadastroUsuario = () => {
   };
 
 
-  const meuSubmit = (evento) => {
-    evento.preventDefault()
+  const meuSubmit = async (evento) => {
+    evento.preventDefault() //EVITA O COMPORTAMENTO PADRÃO DO FORM
     console.log(formulario)
+    //Formulario é um OBJETO de uma STATE (ESTADO)
+
+    const docRef = await addDoc(collection(db, "usuarios"), formulario)
 
   }
 
