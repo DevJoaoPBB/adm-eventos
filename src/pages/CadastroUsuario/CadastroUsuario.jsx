@@ -40,7 +40,7 @@ const CadastroUsuario = () => {
     <div>
       <h2>Cadastro de Usuário</h2>
       <form onSubmit={meuSubmit}>
-        <label htmlFor='nome' >Nome</label>
+        <label htmlFor='nome' >Nome Usuario</label>
         <input type='text' id="nome" name="nome"
           value={formulario.nome}
           onChange={alteraFormulario} />
